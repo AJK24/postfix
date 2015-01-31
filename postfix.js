@@ -48,21 +48,22 @@ function convertToPost(equation){
 	var temp = new Stack();
 
 	for(var i = 0; i < equation.length; i++){
+console.log('I am pushing something '+ equation[i]);		
 		temp.push(equation[i]);
 	}
 
 //testing should not be zero
-console.log(temp);
+console.log('length is ' + temp.length());
 
 	///TESTING SHOULD PRINT CONTENTS OF TEMP and should empty temp
-	while(temp.length() > 0){
+	while(temp.length() > 0 ){
 		console.log(temp.pop());	
 	}
 
 //testing should print out the stack,not contents
-console.log(temp); 
+console.log("I am peeking " + temp.peek()); 
 }
 
 
-convertToPost(12315);
+convertToPost("12315");
 
