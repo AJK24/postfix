@@ -48,16 +48,28 @@ function convertToPost(equation){
 	var temp = new Stack();
 
 	for(var i = 0; i < equation.length; i++){
-console.log('I am pushing something '+ equation[i]);		
-		temp.push(equation[i]);
+//console.log('I am pushing something '+ equation[i]);		
+	
+		//pushes to the final stack
+		if(equation[i] >= '0' || equation[i] <= '9'){
+			final.push(equation[i]);
+		}
+		//pushes to the temp stack
+		else if(equation[i] == '+' || equation[i] == '-' || equation == '/' || equation[i] == '*'){
+			temp.push(equation[i]);
+		}
+		//if invalid character will print
+		else
+			console.log("Erroe - invalid number");
 	}
 
 //testing should not be zero
-console.log('length is ' + temp.length());
+console.log('length of temp ' + temp.length());
+console.log('length of final ' + final.length());
 
 	///TESTING SHOULD PRINT CONTENTS OF TEMP and should empty temp
-	while(temp.length() > 0 ){
-		console.log(temp.pop());	
+	while(final.length() > 0 ){
+		console.log(final.pop());	
 	}
 
 //testing should print out the stack,not contents
@@ -65,5 +77,5 @@ console.log("I am peeking " + temp.peek());
 }
 
 
-convertToPost("12315");
+convertToPost("1+23-15");
 
