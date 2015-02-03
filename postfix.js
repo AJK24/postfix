@@ -82,13 +82,13 @@ function convertToPost(equation){
 //	var second = 0;
 
 
-	for(var i = 0; i < equation.length; i++){
+	for(var i = 0; i < equation.length-1; i++){
 //console.log('I am pushing something '+ equation[i]);		
 	
 		//pushes to the final stack
 		if(equation[i] >= '0' &&  equation[i] <= '9'){
 			final.push(equation[i]);
-					}
+		}
 		//pushes to the temp stack
 		else if(equation[i] == '+' || equation[i] == '-' || equation == '/' || equation[i] == '*'){
 			// push operator to operator stack
@@ -99,7 +99,8 @@ function convertToPost(equation){
 			final.push(operators.pop());
 			//must increment up one to count make the loop work properly since the next iteration was just pushed to final.
 			i++;
-
+console.log('peeking ' + final.peek());
+console.log(operators.peek());
 		}
 		//if invalid character will print
 		else
@@ -115,10 +116,13 @@ function convertToPost(equation){
 
 
 //testing string to be printed
-var postequ
+var postequ;
+var temp;
 	///TESTING SHOULD PRINT CONTENTS OF THE FINAL POST EQUATION
-	while(final.length() > 0 ){
-		postequ += final.pop();
+	while(final.length() >  0 ){
+		temp.push(final.pop());
+		postequ += temp.pop();
+		
 	}
 	console.log(postequ);
 //	console.log("just checked final now printing operators which should be empty");
@@ -141,6 +145,6 @@ var postequ
 
 
 
-
+//should print 12+5-
 convertToPost("1+2-5");
 
