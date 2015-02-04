@@ -82,7 +82,7 @@ function convertToPost(equation){
 //	var second = 0;
 
 
-	for(var i = 0; i < equation.length-1; i++){
+	for(var i = 0; i < equation.length; i++){
 //console.log('I am pushing something '+ equation[i]);		
 	
 		//pushes to the final stack
@@ -99,8 +99,8 @@ function convertToPost(equation){
 			final.push(operators.pop());
 			//must increment up one to count make the loop work properly since the next iteration was just pushed to final.
 			i++;
-console.log('peeking ' + final.peek());
-console.log(operators.peek());
+console.log('peeking final ' + final.peek());
+console.log('peeking operators ' + operators.peek());
 		}
 		//if invalid character will print
 		else
@@ -117,13 +117,29 @@ console.log(operators.peek());
 
 //testing string to be printed
 var postequ;
-var temp;
-	///TESTING SHOULD PRINT CONTENTS OF THE FINAL POST EQUATION
+var temp = new Stack();
+
+
+	
+console.log("top of final " +  final.peek());
+
+
+///TESTING SHOULD PRINT CONTENTS OF THE FINAL POST EQUATION
+
+//reverses the order
 	while(final.length() >  0 ){
 		temp.push(final.pop());
+	//	postequ += final.pop();	
+
+	}
+//then prints the order properly
+	while(temp.length() > 0){
 		postequ += temp.pop();
 		
 	}
+
+
+
 	console.log(postequ);
 //	console.log("just checked final now printing operators which should be empty");
 //	while(operators.length() > 0){
