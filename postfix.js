@@ -82,13 +82,27 @@ function convertToPost(equation){
 //	var second = 0;
 
 
+
+
+
+/////this follows the algorithm!!!!!!!
+
+
+
+
+
+
 	for(var i = 0; i < equation.length; i++){
 //console.log('I am pushing something '+ equation[i]);		
 	
+		//if number push to stack
 		//pushes to the final stack
 		if(equation[i] >= '0' &&  equation[i] <= '9'){
 			final.push(equation[i]);
 		}
+		//if operator push to operator stack, then push 2 numbers and 
+		//push the operator back on
+
 		//pushes to the temp stack
 		else if(equation[i] == '+' || equation[i] == '-' || equation == '/' || equation[i] == '*'){
 			// push operator to operator stack
@@ -121,10 +135,20 @@ var temp = new Stack();
 
 
 	
-console.log("top of final " +  final.peek());
+//console.log("top of final " +  final.peek());
 
 
 ///TESTING SHOULD PRINT CONTENTS OF THE FINAL POST EQUATION
+
+
+
+
+
+
+
+//this code reverses the the order of final, it is placed in 
+//the incorrect order 	-5+21	- has to be flipped to 12+5-
+
 
 //reverses the order
 	while(final.length() >  0 ){
