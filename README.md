@@ -15,6 +15,8 @@ However, just using convertToPost prints out the postfix equation
 But using both convertToPost and doMath inside Console.log does not print the postfix equation only a blank space and then the answer.
 
 
+ONLY USES SINGLE DIGITS!! Does not use the two stacks in the same way Capouch explained it
+
 
 
 convertToPost("1+2-5");
